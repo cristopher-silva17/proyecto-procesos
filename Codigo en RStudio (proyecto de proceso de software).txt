@@ -1,0 +1,8 @@
+library(tm)
+library(NLP)
+library(RColorBrewer)
+library(wordcloud)
+
+tags <- read.csv2("Tags.csv", header = TRUE, encoding = "utf8")
+
+wordcloud( tags$X_TagName ,tags$X_Count, min.freq = 50,max.words = 2000,colors = brewer.pal(8,"Dark2"),random.order = FALSE)
